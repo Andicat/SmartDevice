@@ -1,0 +1,316 @@
+.header {
+  color: #ffffff;
+  background: #1B2D37;
+  background-image: url("../img/background.png");
+  padding: 10px;
+  min-height: 858px;
+}
+
+.header__top {
+  height: 52px;
+  width: 74%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/*.main {
+  max-width: 1024px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4rem 0;
+
+  &-grey {
+    background-color: #fafafa;
+  }
+}
+
+.header {
+  padding: 1rem 0;
+
+  .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.navigation {
+
+  &-item {
+    color: #515769;
+    text-decoration: none;
+    padding: .3rem;
+
+    &:not(:first-child) {
+      margin-left: .8rem;
+    }
+  }
+
+  .active {
+    border-bottom: 2px solid #00ccff;
+  }
+
+  :hover {
+    color: #00ccff;
+  }
+}
+
+.logo {
+  color: #00ccff;
+
+  &-title {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 2rem;
+
+  &__small {
+    font-size: 1.5rem;
+    color: #515769;
+    background-color: rgba(255, 255, 255, .8);
+    padding: 1rem 0;
+    margin-top: 130px;
+  }
+}
+
+.nick {
+  color: #00ccff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 5rem;
+  letter-spacing: .8rem;
+}
+
+.text {
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: .3rem;
+
+  &__small {
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    line-height: 1.5;
+  }
+}
+
+.profession {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1rem 0;
+  letter-spacing: .15rem;
+}
+
+.skills {
+  padding: 4rem 0;
+  
+  &__items {
+    text-align: center;
+
+    a {
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: auto 20px;
+      padding-left: 30px;
+      font-size: 17px;
+      text-decoration: none;
+      font-size: 1.5rem;
+      color: #515769;
+      margin: .5rem;
+    }
+
+    a[href$="JavaScript"] {
+      background-image: url(../images/javascript.svg);
+    }
+
+    a[href$="react"] {
+      background-image: url(../images/react.svg);
+    }
+
+    a[href$="redux"] {
+      background-image: url(../images/redux.png);
+    }
+
+    a[href$="webpack.github.io"] {
+      background-image: url(../images/webpack.png);
+    }
+  }
+}
+
+.grid { 
+  width: 100%;
+
+  &__item {
+    position: relative;
+    display: inline-flex;
+    height: 300px;
+    margin: 5px;
+    background-size: cover !important;
+    vertical-align: middle;
+    transition: all .5s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+
+    &:hover .grid__text {
+      opacity: 1;
+    }
+    
+    & .section__title {
+      padding-top: 0;
+    }
+
+    &--1 {
+      width: 31%; 
+    }
+
+    &--2 { 
+      width: 63.5%;
+    }
+  }
+
+  &__text {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .5s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    background-color: rgba(255,255,255, .4);
+  }
+  
+  img {
+    width: 100%;
+  }
+}
+
+.footer {
+  text-align: center;
+  font-size: 1.5rem;
+
+  .text__small {
+    padding-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .fa {
+    color: #b3b3b3;
+    cursor: pointer;
+
+    &:hover {
+      color: #00ccff;
+    }
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  border-radius: 50%;
+  color: #b3b3b3;
+  background-color: #ebebeb;
+  text-align: center;
+  margin: 1rem;
+  letter-spacing: 0;
+
+  &:hover {
+    color: #00ccff;
+  }
+}
+
+.contacts {
+
+  .title {
+    margin-left: 2.3rem;
+  }
+
+  &__info {
+    .icon {
+       margin: .3em 0 .3em 2rem;
+    }
+
+    .text {
+       margin-right: 1.8rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-device-width: 767px) {
+  .header {
+    .main {
+      display: block;
+    }
+  }
+
+  .welcome {
+    padding: 3rem 0;
+  }
+
+  .logo {
+    text-align: center;
+
+    &-title {
+      margin-left: .9rem;
+    }
+  }
+
+  .navigation {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .grid__item--1,
+  .grid__item--2 {
+    width: 100%;
+  }
+  .portfolio {
+    padding: 2rem 0;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .contacts {
+    padding: 1rem 0;
+
+    .title {
+      margin-left: 0;
+    }
+
+    &__info {
+      text-align: left;
+
+      .text {
+        margin-right: 0;
+      }
+
+      .icon {
+        margin: .3rem;
+      }
+    }
+
+    &__text {
+      font-size: 1rem;
+    }
+  }
+}
+*/
