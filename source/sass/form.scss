@@ -2,18 +2,18 @@
   color: $white;
   min-height: 500px;
   background-color: $blue;
+  background-image: url("../img/paper_airplane.png"), url("../img/triangles.svg");
+  /*, url("../img/form-triangles.svg");*/
+  background-repeat: no-repeat;
+  background-position: $plane-left 160px, 175px -60px;
+  background-size: $plane-size, $tr-size;
 }
 
 .message__container {
   box-sizing: border-box;
   max-width: 1230px;
-  padding: 30px;
-  background-image: url("../img/paper_airplane.png"), url("../img/triangles.svg"), url("../img/form-triangles.svg");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: 42%;
+  padding: 90px 30px 115px 30px;
 }
-
 
 .form {
   max-width: 570px;
@@ -28,6 +28,8 @@
   font-size: 36px;
   line-height: 51px;
   padding: 0;
+  margin-bottom: 12px;
+  margin-left: -5px;
 }
 
 .form__text {
@@ -35,7 +37,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  margin-bottom: 15px;
+  margin-bottom: 49px;
 }
 
 .form__row {
@@ -48,14 +50,14 @@
   min-width: 270px;
   box-sizing: border-box;
   border: none;
-  min-height: 58px;
+  min-height: 50px;
   font-size: 16px;
   line-height: 22px;
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 0 5px 0 22px;
+  padding: 14px 5px 14px 14px;
   color: $white;
   resize: none;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
 
   &::-webkit-input-placeholder {
     font-size: 16px;
@@ -88,12 +90,15 @@
 }
 
 .form__message {
-  padding: 10px 15px;
+  padding: 13px 20px;
+  min-height: 154px;
+  margin-bottom: 43px;
 }
 
 .form__button {
   @include button($white,270px);
-  /*min-width: 270px;*/
+  padding: 0;
+  margin: 0;
   &:hover,
   &:focus {
     opacity: 0.5;
@@ -101,7 +106,7 @@
 }
 
 .form__label {
-  width: 250px;
+  width: 230px;
   font-family: "PT Mono", "Arial", monospace;
   font-weight: normal;
   font-size: 14px;
@@ -143,8 +148,8 @@
 }
 
 @media (max-width: $tablet-width-max) {
-  .message__container {
-    background: none;
+  .message {
+    background-image: none;
   }
   .form {
     margin: 0 auto;

@@ -1,7 +1,7 @@
 .features {
   color: $grey-features;
   min-height: 878px;
-  padding: 109px 0 40px 0;
+  padding: 87px 0 85px 0;
   background-image: url("../img/features-triangles.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -54,6 +54,7 @@
   font-size: 24px;
   line-height: 34px;
   color: $blue;
+  margin: 15px 0;
 }
 
 .features__description {
@@ -68,28 +69,34 @@
 .features__company {
   box-sizing: border-box;
   max-width: 1220px;
-  padding: 25px 25px 25px 200px;
+  padding: 48px 30px 25px 205px;
   margin: 0 auto;
   background-image: url("../img/2005.png");
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: -5px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   
   h2 {
     font-family: "Roboto Condensed", "Arial", sans-serif;
     font-weight: normal;
     font-size: 36px;
-    line-height: 51px;
+    line-height: 52px;
     color: $grey-features;
-    margin-top: 0;
+    margin: 0 0 20px 0;
   }
   p {
     font-family: "PT Mono", "Arial", monospace;
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
+    margin: 0 0 20px 0;
   }
   a {
     @include button($blue,180px);
+    margin-top: 20px;
   }
 }
 

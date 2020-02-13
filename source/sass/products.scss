@@ -1,14 +1,13 @@
 .products {
   color: #ffffff;
   background: #1B2D37;
-  min-height: 858px;
-  padding: 30px 0 0 0;
+  padding: 0;
 }
 
 .products__container {
   box-sizing: border-box;
   max-width: 1230px;
-  padding: 30px;
+  padding: 25px 30px 96px 30px;
 }
 
 .products__text {
@@ -20,6 +19,7 @@
   text-align: left;
   margin: 65px 0;
   padding-right: 5px;
+  margin-bottom: 50px;
 }
 
 .products__list {
@@ -66,7 +66,7 @@
   width: 100%;
   height: 100%;
   color: white;
-  padding: 53px 38% 53px 12%;
+  padding: 52px 45% 53px 12%;
 }
 
 .products__item_dev {

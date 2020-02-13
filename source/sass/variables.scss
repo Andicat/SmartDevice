@@ -8,3 +8,7 @@ $grey-footer: #FAFAFA;
 
 $mobile-width-max: 767px;
 $tablet-width-max: 1023px;
+
+$plane-size: calc(511px - (1920px - 100%) * 0.2);
+$tr-size: calc(671px - (1920px - 100%) * 0.2);
+$plane-left: calc(350px - (30% - 422px));
