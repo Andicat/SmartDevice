@@ -1,27 +1,27 @@
 .logo {
   display: flex;
   max-width: 250px;
+  cursor: pointer;
+  h2 {
+    display: block;
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-size: 25px;
+    line-height: 29px;
+    font-weight: bold;
+    margin: 0;
+  }
+  span {
+    display: block;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    color: $grey-text;
+    margin: 0;
+  }
 }
 
 .logo__text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   margin-right: auto;
-  padding-left: 17px;
+  padding-left: 15px;
   padding-top: 5px;
-}
-
-.logo__name {
-  font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-size: 25px;
-  line-height: 29px;
-  font-weight: bold;
-}
-
-.logo__slogan {
-  font-family: "Roboto", "Arial", sans-serif;
-  font-size: 12px;
-  line-height: 14px;
-  color: $grey-text;
 }

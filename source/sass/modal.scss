@@ -1,0 +1,94 @@
+.modal {
+  box-sizing: border-box;
+  display: none;
+  position: fixed;
+  color: $white;
+  max-width: 490px;
+  min-height: 605px;
+  padding: 28px 40px;
+  background-color: $blue;
+  box-shadow: 0px 20px 40px 0 rgba(41, 52, 73, 0.75);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 10;
+  legend {
+    font-size: 28px;
+    line-height: 40px;
+    padding-left: 5px;
+    margin-top: 0;
+  }
+  span {
+    padding-right: 10px;
+    margin-bottom: 30px;
+  }
+  input {
+    height: 51.83px;
+    margin-bottom: 30.45px;
+  }
+  textarea {
+    height: 104px;
+    margin-bottom: 32px;
+  }
+  button {
+    min-height: 47px;
+    margin-bottom: 29px;
+  }
+  label {
+    width: 330px;
+    padding-left: 47px;
+    margin-top: 5px;
+  }
+}
+
+
+.form input::-webkit-input-placeholder,
+.form textarea::-webkit-input-placeholder {
+  font-family: "PT Mono", "Arial", monospace;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: normal;
+}
+
+.modal-show {
+  display: block;
+  animation: show 0.3s;
+}
+
+.modal-error {
+  animation: error 0.3s;
+}
+
+.modal__button-close {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  right: 18px;
+  top: 18px;
+  cursor: pointer;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 1px;
+    background-color: $white;
+    top: 10px;
+    left: -1px;
+    border-radius: 5px;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

@@ -1,75 +1,78 @@
 .features {
   color: $grey-features;
   min-height: 878px;
-  padding: 87px 0 85px 0;
   background-image: url("../img/features-triangles.svg");
   background-repeat: no-repeat;
-  background-position: center;
-}
-
-.features__list {
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1220px;
-  padding: 25px;
-  box-sizing: border-box;
-}
-
-.features__item {
-  width: calc(50% - 15px);
-  min-height: 300px;
-  border: 1px solid #EBEBEB;
-  margin-bottom: 30px;
-  padding: 40px 45px;
-  box-sizing: border-box;
-  position: relative;
-  fill: $blue;
-  &:before {
-    content: "";
-    background-color: $blue;
-    position: absolute;
-    width: 3px;
-    min-height: calc(100% + 2px);
-    left: -1px;
-    top: -1px;
-  }  
-  &:hover {
-    cursor: pointer;
-    background-color: $blue;
-    border-color: $blue;
-    fill: $white;
-    .features__name,
-    .features__description {
-      color: $white;
+  background-position: center -30px;
+  h3 {
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    color: $blue;
+    margin: 15px 0;
+  }
+  p {
+    font-family: "PT Mono", "Arial", monospace;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: $grey-features;
+    margin-bottom: 0;
+  }
+  ul {
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1220px;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  li {
+    width: calc(50% - 15px);
+    min-height: 300px;
+    border: 1px solid #EBEBEB;
+    margin-bottom: 30px;
+    padding: 40px 44px;
+    box-sizing: border-box;
+    position: relative;
+    background-color: $white;
+    fill: $blue;
+    &:before {
+      content: "";
+      background-color: $blue;
+      position: absolute;
+      width: 3px;
+      min-height: calc(100% + 2px);
+      left: -1px;
+      top: -1px;
+    }
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: $blue;
+      border-color: $blue;
+      fill: $white;
+      outline: none;
+      transition: 0.2s ease;
+      h3,
+      p {
+        color: $white;
+      }
     }
   }
 }
 
-.features__name {
-  font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 34px;
-  color: $blue;
-  margin: 15px 0;
-}
-
-.features__description {
-  font-family: "PT Mono", "Arial", monospace;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-  color: $grey-features;
-  margin-bottom: 0;  
+.features__container {
+  padding: 87px 0 85px 0;
 }
 
 .features__company {
   box-sizing: border-box;
   max-width: 1220px;
-  padding: 48px 30px 25px 205px;
+  padding: 48px 30px 24px 205px;
   margin: 0 auto;
   background-image: url("../img/2005.png");
   background-repeat: no-repeat;
@@ -78,7 +81,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  
+
   h2 {
     font-family: "Roboto Condensed", "Arial", sans-serif;
     font-weight: normal;
@@ -95,30 +98,52 @@
     margin: 0 0 20px 0;
   }
   a {
-    @include button($blue,180px);
+    @include button(180px,$blue,$white,$blue);
     margin-top: 20px;
   }
 }
 
 @media (max-width: $tablet-width-max) {
-  .features__item {
+  .features {
+    background-position: calc(50% + 228px) -87px;
+  }
+  .features__container {
+    padding-top: 28px;
+    padding-bottom: 10px;
+  }
+  .features li {
     min-height: 232px;
-    padding: 27px 27px;
+    padding: 25px 19px 18px 27px;
+    h3 {
+      margin-top: 5px;
+      line-height: 24px;
+    }
   }
   .features__company {
+    padding-top: 1px;
+    padding-left: 210px;
+    padding-bottom: 54px;
     background-size: 251px;
+    background-position: -8px 0;
     h2 {
       font-size: 32px;
       line-height: 45px;
+      margin-bottom: 25px;
+    }
+    p {
+      padding-left: 2px;
+    }
+    a {
+      margin-left: 3px;
     }
   }
 }
 
 @media (max-width: $mobile-width-max) {
-  .features__item {
+  .features li {
     width: 100%;
   }
-  .features__name {
+  .features h3 {
     font-size: 20px;
     line-height: 28px;
   }
@@ -131,4 +156,3 @@
     }
   }
 }
-

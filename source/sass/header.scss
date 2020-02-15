@@ -4,7 +4,8 @@
   background-image: url("../img/main.png"), url("../img/header-circles.svg"), url("../img/triangles.svg"), url("../img/background.png");
   background-repeat: no-repeat, no-repeat, no-repeat, repeat;
   background-position: calc(50% + 430px) 258px, calc(50% + 315px) 105px, calc(50% + 405px) 120px, center;
-  min-height: 878px;
+  min-height: 877px;
+  padding-top: 2px; 
 }
 
 .header__top {
@@ -15,33 +16,16 @@
   align-items: center;
 }
 
-.header__text {
-  min-width: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.header__logo {
   margin-right: auto;
-  padding-left: 16px;
-}
-
-.header__text-name {
-  font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-size: 25px;
-  line-height: 29px;
-}
-
-.header__text-slogan {
-  font-family: "Roboto", "Arial", sans-serif;
-  font-size: 12px;
-  line-height: 14px;
-  color: $grey-text;
 }
 
 .header__contact {
   font-family: "PT Mono", "Arial", monospace;
   color: $white;
+  fill: $blue;
   font-size: 16px;
-  line-height: 18px;  
+  line-height: 18px;
   margin-right: 50px;
   min-width: 170px;
   display: flex;
@@ -49,10 +33,17 @@
   span {
     padding-left: 16px;
   }
+  &:hover,
+  &:focus {
+    color: $blue;
+    fill: $white;
+    outline: none;
+    transition: 0.2s ease;
+  }
 }
 
-.header__call {
-  @include button($white,180px);
+.header__button-call {
+  @include button(180px,$white,$blue,transparent);
 }
 
 .header__main {
@@ -62,7 +53,6 @@
   flex-direction: column;
   align-items: flex-start;
   padding-top: 200px;
-  
   h1 {
     font-family: "Roboto Condensed", "Arial", sans-serif;
     font-weight: bold;
@@ -92,7 +82,7 @@
   }
 }
 
-.header__main-click {
+.header__button-main {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: bold;
   font-size: 16px;
@@ -111,10 +101,17 @@
   margin-top: 22px;
   padding: 18px;
   box-sizing: border-box;
+  &:hover,
+  &:focus {
+    background: $white;
+    color: $blue;
+    fill: $white;
+    outline: none;
+    transition: 0.2s ease;
+  }
 }
 
 .header__main-scroll {
-  display: block;
   box-sizing: border-box;
   font-family: PT Mono;
   font-size: 14px;
@@ -124,39 +121,33 @@
   transform: translate(-50%,-50%) rotate(-90deg) translate(-140px, 12px);
 }
 
-.header__main-click-text_mobile {
-  display: none;
-}
-
 @media (max-width: $tablet-width-max) {
   .header {
     background-image:  url("../img/main.png"), url("../img/triangles.svg"), url("../img/background.png");
     background-repeat: no-repeat, no-repeat, repeat;
-    background-position: calc(50% + 365px) 115px, calc(50% + 340px) -30px, center;
+    background-position: calc(50% + 357px) 113px, calc(50% + 320px) -39px, center;
     background-size: 465px, 528px, 100%;
     min-height: 666px;
   }
   .header__top {
-    padding: 20px 25px;
+    padding: 16px 25px 19px 25px;
   }
+  .header__logo {
+    margin-top: 2.5px;
+  }
+
   .header__contact {
     min-width: 24px;
     margin-right: 0;
-    margin-left: 35px;
-    span {
-      display: none;
-    }
+    margin-left: 33px;
     svg {
       height: 24px;
-      width: 24px;
+      width: 25px;
     }
   }
-  .header__call {
-    display: none;
-  }
   .header__main {
-    min-height: 589px;
-    padding: 90px 88px;
+    min-height: 595px;
+    padding: 95px 88px;
     h1 {
       max-width: 470px;
       font-size: 60px;
@@ -175,15 +166,12 @@
       }
     }
   }
-  .header__main-click {
+  .header__button-main {
     font-size: 16px;
     line-height: 19px;
     width: 379px;
     margin-left: 51px;
-    margin-top: 37px;
-  }
-  .header__main-scroll {
-    display: none;
+    margin-top: 35px;
   }
 }
 
@@ -191,24 +179,22 @@
   .header {
     background-position: calc(100% + 7px) 115px, calc(100% + 320px) -45px, center;
     background-size: calc(301px + 50% - 160px), 505px, 100%;
-    min-height: 647px;
+    background-position: 26px 91px, 152px -45px, center;
+    min-height: 645px;
   }
   .header__top {
-    padding: 17px;
+    padding: 12px 14px 12px 17px;
   }
-  .header__logo {
-    margin-right: auto;
-  }
-  .header__logo-image {
+  .header__logo img {
     width: 38px;
-    height: 33px;
+    height: 38px
   }
-  .header__text {
-    display: none;
+  .header__contact {
+    margin-left: 23px;
+    
   }
   .header__main {
-    min-height: 589px;
-    padding: calc(240px - (50% - 160px)) 17px 90px 17px;
+    padding: 220px 17px 10px calc(15px + 50% * 0.2 - 32px) ;
     h1 {
       width: 280px;
       font-size: 40px;
@@ -219,22 +205,16 @@
       width: 230px;
       font-size: 16px;
       line-height: 25px;
-      &::before {
-        left: 8px;
+      margin-top: 26px;
+    &::before {
+        left: 3px;
       }
     }
   }
-  .header__main-click {
+  .header__button-main {
     width: 286px;
-    margin-left: 0;
-    margin-top: 37px;
-    padding: 18px 0px;
-  }
-  .header__main-click-text {
-    display: none;
-  }
-  .header__main-click-text_mobile {
-    display: inline-block;
+    margin-left: 4px;
+    margin-top: 23px;
+    padding: 18px 0;
   }
 }
-

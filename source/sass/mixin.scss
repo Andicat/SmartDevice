@@ -1,5 +1,4 @@
-@mixin button($color,$width) {
-  display: block;
+@mixin button($width,$color,$color-hover,$color-bg-hover) {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: bold;
   font-size: 14px;
@@ -15,4 +14,43 @@
   text-align: center;
   padding: 14px;
   background-color: transparent;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: $color-hover;
+    border-color: $color-hover;
+    background-color: $color-bg-hover;
+    outline: none;
+    transition: 0.2s ease;
+  }
+}
+
+@mixin top-line {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 1px;
+    background-color: $grey;
+    opacity: 0.2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@mixin bottom-line {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 1px;
+    background-color: $grey;
+    opacity: 0.2;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
