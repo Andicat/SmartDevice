@@ -6,8 +6,10 @@ var closeButtonLink = document.querySelector('.modal__button-close');
 var phoneInputList = document.querySelectorAll('.phone');
 var overlay = document.querySelector('.overlay');
 var anchorList = document.querySelectorAll('.anchor-link');
+var accList = document.querySelectorAll('.acc');
 var phoneInput;
 var anchor;
+var acc;
 var closeLink;
 var userName;
 var userPhone;
@@ -154,5 +156,17 @@ for (i = 0; i < anchorList.length; i++) {
       behavior: 'smooth',
       block: 'start'
     });
+  });
+}
+
+// аккордеон
+for (i = 0; i < accList.length; i++) {
+  acc = accList[i];
+  acc.addEventListener('click', function (e) {
+    if (e.target.checked) {
+      for (var j = 0; j < accList.length; j++) {
+        accList[j].checked = accList[j] === e.target ? true : false;
+      }
+    }
   });
 }
