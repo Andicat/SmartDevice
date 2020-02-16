@@ -58,13 +58,13 @@
           <span>умные технологии</span>
         </div>
       </a>
-      <a class="header__contact" href="mailto:info@sd.ru">
+      <a class="header__contact" href="mailto:info@sd.ru" aria-label="Наш электронный адрес">
         <svg width="19" height="14">
           <use xlink:href="#icon-mail"></use>
         </svg>
         <span class="show_desktop">info@sd.ru</span>
       </a>
-      <a class="header__contact" href="tel:+74950005252">
+      <a class="header__contact" href="tel:+74950005252" aria-label="Наш номер телефона">
         <svg width="18" height="18">
           <use xlink:href="#icon-tel"></use>
         </svg>
@@ -150,10 +150,10 @@
             <legend>Остались вопросы? Задайте их нам!</legend>
             <span>Мы проконсультируем Вас бесплатно</span>
             <div class="form__row">
-              <input type="text" name="name" id="name" placeholder="Имя" value="" required="">
-              <input class="phone" type="text" name="phone" id="phone" placeholder="Телефон" value="" required="">
+              <input type="text" name="name" id="name" placeholder="Имя" value="" aria-label="Введите ваше имя" required="">
+              <input class="phone" type="text" name="phone" id="phone" placeholder="Телефон" aria-label="Введите ваш номер телефона" value="" required="">
             </div>
-            <textarea id="content" rows="5" placeholder="Ваш вопрос" required=""></textarea>
+            <textarea id="content" rows="5" placeholder="Ваш вопрос" aria-label="Введите текст вопроса" required=""></textarea>
             <div class="form__row">
               <button type="submit">Задать вопрос</button>
               <input class="visually-hidden" type="checkbox" name="agr" id="agr" value="agr" required="">
@@ -177,17 +177,17 @@
         <p class="show-tablet show-mobile">1999-2018 SD Service Devices</p>
         <ul class="footer__social social-list">
           <li>
-            <a href="#">
+            <a href="#" aria-label="Smart Device на фейсбук">
               <svg width="27" height="27"><use xlink:href="#icon-fb"></use></svg>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" aria-label="Smart Device в Одноклассники">
               <svg width="27" height="27"><use xlink:href="#icon-ok"></use></svg>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" aria-label="Smart Device в Вконтакте">
             <svg width="27" height="27"><use xlink:href="#icon-vk"></use></svg>
             </a>
           </li>
