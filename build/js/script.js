@@ -5,7 +5,7 @@ var messageForm = document.querySelector('.modal__message-form');
 var closeButtonLink = document.querySelector('.modal__button-close');
 var phoneInputList = document.querySelectorAll('.phone');
 var overlay = document.querySelector('.overlay');
-var anchorList = document.querySelectorAll('.scroll-link');
+var anchorList = document.querySelectorAll('.anchor-link');
 var phoneInput;
 var anchor;
 var closeLink;
@@ -146,9 +146,10 @@ function checkPhone(evt) {
 // плавный скроллинг
 for (i = 0; i < anchorList.length; i++) {
   anchor = anchorList[i];
-  var blockID = anchor.getAttribute('href').substr(1);
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
+    var link = e.target.nodeName === 'SPAN' ? e.target.parentNode : e.target;
+    var blockID = link.getAttribute('href').substr(1);
     document.getElementById(blockID).scrollIntoView({
       behavior: 'smooth',
       block: 'start'

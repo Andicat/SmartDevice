@@ -208,8 +208,9 @@
 @media (max-width: $mobile-width-max) {
   .footer {
     label {
+      box-sizing: border-box;
       margin: 0;
-      padding: 28px 5px 29px 5px;
+      padding: 28px 5px 5px 5px;
       cursor: pointer;
 
       &::before,
@@ -221,7 +222,7 @@
         background: $grey;
         opacity: 0.5;
         right: 7px;
-        top: 50%;
+        top: 36px;
         display: block;
       }
 
@@ -230,8 +231,12 @@
       }
     }
 
-    input:checked ~ label::after {
-      display: none;
+    input:checked ~ label {
+      padding-bottom: 25px;
+
+      &::after {
+        display: none;
+      }
     }
 
     input ~ ul {
@@ -240,10 +245,6 @@
 
     input[id="nav"]:checked ~ ul {
       display: block;
-    }
-
-    input[id="nav"]:checked ~ ul:last-child {
-      margin-bottom: 25px;
     }
 
     input[id="contacts"]:checked ~ .footer__contacts-list {
@@ -276,17 +277,17 @@
     @include bottom-line;
 
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 25px;
   }
 
   .footer__section_contacts {
     min-width: 100%;
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 25px;
   }
 
   .footer__contacts-list {
-    padding: 5px 15px 24px 5px;
+    padding: 5px 15px 1px 5px;
     display: none;
   }
 
