@@ -107,10 +107,12 @@
   .features {
     background-position: calc(50% + 228px) -87px;
   }
+
   .features__container {
     padding-top: 28px;
     padding-bottom: 10px;
   }
+
   .features li {
     min-height: 232px;
     padding: 25px 19px 18px 27px;
@@ -119,6 +121,7 @@
       line-height: 24px;
     }
   }
+
   .features__company {
     padding-top: 1px;
     padding-left: 210px;
@@ -140,19 +143,45 @@
 }
 
 @media (max-width: $mobile-width-max) {
-  .features li {
-    width: 100%;
+  .features {
+    background-position: calc(50% + 120px) 477px;
+    padding: 0;
+    ul {
+      padding: 15px;
+    }
+    li {
+      width: 100%;
+      min-height: 232px;
+      margin-bottom: 20px;
+      padding: 23px 13px 23px 25px;
+      h3 {
+        font-size: 20px;
+        line-height: 28px;
+        margin: 9px 0;
+      }
+      p {
+        margin-top: 9px;
+      }
+    }
   }
-  .features h3 {
-    font-size: 20px;
-    line-height: 28px;
+
+  .features__container {
+    padding: 22px 0 45px 0;
   }
+
   .features__company {
     background: none;
-    padding: 15px;
+    padding: 21px 13px 21px 13px;
     h2 {
       font-size: 28px;
       line-height: 40px;
+      margin-bottom: 2px;
+    }
+    p {
+      margin-top: 19px;
+    }
+    a {
+      margin-top: 8px;
     }
   }
 }

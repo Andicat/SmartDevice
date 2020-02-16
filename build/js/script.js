@@ -5,7 +5,9 @@ var messageForm = document.querySelector(".modal__message-form");
 var closeButtonLink = document.querySelector(".modal__button-close");
 var phoneInputList = document.querySelectorAll(".phone");
 var overlay = document.querySelector(".overlay");
+var anchorList = document.querySelectorAll(".scroll-link")
 var phoneInput;
+var anchor;
 var close;
 var userName;
 var userPhone;
@@ -140,4 +142,16 @@ function checkPhone(evt) {
   if (curLen > 16) {
     this.value = this.value.substring(0, this.value.length - 1);
   }
+}
+
+//плавный скроллинг
+for (var i = 0; i < anchorList.length; i++) {
+  anchor = anchorList[i];
+  var blockID = anchor.getAttribute('href').substr(1);
+  anchor.addEventListener('click', function() {
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
 }

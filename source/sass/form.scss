@@ -52,7 +52,6 @@
     color: $white;
     resize: none;
     margin-bottom: 40px;
-
     &::-webkit-input-placeholder {
       font-family: "PT Mono", "Arial", monospace;
       font-size: 16px;
@@ -60,13 +59,11 @@
       font-weight: normal;
       color: $white;
     }
-
     &::-moz-placeholder {
       font-size: 16px;
       color: $white;
       opacity: 1;
     }
-
     &:hover,
     &:focus,
     &:active {
@@ -76,7 +73,6 @@
       transition: 0.2s ease;
       padding-left: 16px;
     }
-
     &:focus::placeholder {
       color: transparent;
     }
@@ -97,7 +93,6 @@
     margin-top: 9px;
     position: relative;
     cursor: pointer;
-
     &::before {
       content: "";
       position: absolute;
@@ -108,7 +103,6 @@
       left: 0;
       top: 0;
     }
-
     &:hover,
     &:focus,
     &:active {
@@ -121,7 +115,7 @@
 
 .form textarea {
   padding: 13px 20px 13px 16px;
-  height: 154px;
+  min-height: 154px;
   margin-bottom: 45px;
   &:hover,
   &:focus,
@@ -147,9 +141,11 @@
   .message {
     background-image: none;
   }
+
   .message__container {
     padding: 80px 28px 104px 33px;
   }
+
   .form {
     max-width: 590px;
     margin: 0 auto;
@@ -176,20 +172,40 @@
       margin-right: 10px;
     }
   }
-
 }
 
 @media (max-width: $mobile-width-max) {
   .message__container {
     padding: 15px;
+    padding-bottom: 43px;
   }
+
   .form__row {
     flex-direction: column;
     justify-content: flex-start;
   }
-  .form legend {
-    max-width: 250px;
-    font-size: 28px;
-    line-height: 40px;
+
+  .form {
+    padding-top: 14px;
+    legend {
+      max-width: 250px;
+      font-size: 28px;
+      line-height: 40px;
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+    span {
+      margin-bottom: 25px;
+    }
+    input {
+      margin-bottom: 32px;
+    }
+    textarea {
+      min-height: 104px;
+      margin-bottom: 33px;
+    }
+    label {
+      margin-top: 31px;
+    }
   }
 }
