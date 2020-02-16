@@ -30,9 +30,11 @@
   min-width: 170px;
   display: flex;
   align-items: center;
+
   span {
     padding-left: 16px;
   }
+
   &:hover,
   &:focus {
     color: $blue;
@@ -53,6 +55,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding-top: 200px;
+
   h1 {
     font-family: "Roboto Condensed", "Arial", sans-serif;
     font-weight: bold;
@@ -62,14 +65,17 @@
     text-transform: uppercase;
     margin: 0;
   }
+
   p {
     max-width: 683px;
-    font-family: PT Mono;
+    font-family: "PT Mono", "Arial", monospace;
     font-size: 22px;
     line-height: 34px;
     padding-left: 98px;
     position: relative;
     margin-top: 27px;
+    text-transform: lowercase;
+
     &::before {
       content: "";
       position: absolute;
@@ -101,6 +107,7 @@
   margin-top: 22px;
   padding: 18px;
   box-sizing: border-box;
+
   &:hover,
   &:focus {
     background: $white;
@@ -113,17 +120,17 @@
 
 .header__main-scroll {
   box-sizing: border-box;
-  font-family: PT Mono;
+  font-family: "PT Mono", "Arial", monospace;
   font-size: 14px;
   line-height: 16px;
   color: $white;
   opacity: 0.5;
-  transform: translate(-50%,-50%) rotate(-90deg) translate(-140px, 12px);
+  transform: translate(-50%, -50%) rotate(-90deg) translate(-140px, 12px);
 }
 
 @media (max-width: $tablet-width-max) {
   .header {
-    background-image:  url("../img/main.png"), url("../img/triangles.svg"), url("../img/background.png");
+    background-image: url("../img/main.png"), url("../img/triangles.svg"), url("../img/background.png");
     background-repeat: no-repeat, no-repeat, repeat;
     background-position: calc(50% + 357px) 113px, calc(50% + 320px) -39px, center;
     background-size: 465px, 528px, 100%;
@@ -142,6 +149,7 @@
     min-width: 24px;
     margin-right: 0;
     margin-left: 33px;
+
     svg {
       height: 24px;
       width: 25px;
@@ -151,17 +159,20 @@
   .header__main {
     min-height: 595px;
     padding: 95px 88px;
+
     h1 {
       max-width: 470px;
       font-size: 60px;
       line-height: 70px;
     }
+
     p {
       max-width: 470px;
       font-size: 18px;
       line-height: 29px;
       padding-left: 50px;
       margin-top: 30px;
+
       &::before {
         width: 33px;
         height: 2px;
@@ -181,9 +192,8 @@
 
 @media (max-width: $mobile-width-max) {
   .header {
-    background-position: calc(100% + 7px) 115px, calc(100% + 320px) -45px, center;
     background-size: calc(301px + 50% - 160px), 505px, 100%;
-    background-position: 26px 91px, 152px -45px, center;
+    background-position: calc(100% + 6.8px) 91px, 152px -45px, center;
     min-height: 645px;
   }
 
@@ -193,7 +203,7 @@
 
   .header__logo img {
     width: 38px;
-    height: 38px
+    height: 38px;
   }
 
   .header__contact {
@@ -202,19 +212,22 @@
 
   .header__main {
     min-height: 560px;
-    padding: 220px 17px 5px calc(15px + 50% * 0.2 - 32px) ;
+    padding: 220px 17px 5px calc(15px + 50% * 0.2 - 32px);
+
     h1 {
       width: 280px;
       font-size: 40px;
       line-height: 47px;
       letter-spacing: 0.07em;
     }
+
     p {
       width: 230px;
       font-size: 16px;
       line-height: 25px;
       margin-top: 26px;
-    &::before {
+
+      &::before {
         left: 3px;
       }
     }

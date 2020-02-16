@@ -4,6 +4,7 @@
   background-image: url("../img/features-triangles.svg");
   background-repeat: no-repeat;
   background-position: center -30px;
+
   h3 {
     font-family: "Roboto Condensed", "Arial", sans-serif;
     font-weight: normal;
@@ -12,6 +13,7 @@
     color: $blue;
     margin: 15px 0;
   }
+
   p {
     font-family: "PT Mono", "Arial", monospace;
     font-weight: normal;
@@ -20,8 +22,8 @@
     color: $grey-features;
     margin-bottom: 0;
   }
+
   ul {
-    padding: 0;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -30,17 +32,19 @@
     padding: 25px;
     box-sizing: border-box;
   }
+
   li {
     width: calc(50% - 15px);
     min-height: 300px;
-    border: 1px solid #EBEBEB;
+    border: 1px solid #ebebeb;
     margin-bottom: 30px;
     padding: 40px 44px;
     box-sizing: border-box;
     position: relative;
     background-color: $white;
     fill: $blue;
-    &:before {
+
+    &::before {
       content: "";
       background-color: $blue;
       position: absolute;
@@ -49,6 +53,7 @@
       left: -1px;
       top: -1px;
     }
+
     &:hover,
     &:focus {
       cursor: pointer;
@@ -57,6 +62,7 @@
       fill: $white;
       outline: none;
       transition: 0.2s ease;
+
       h3,
       p {
         color: $white;
@@ -90,15 +96,19 @@
     color: $grey-features;
     margin: 0 0 20px 0;
   }
+
   p {
     font-family: "PT Mono", "Arial", monospace;
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
     margin: 0 0 20px 0;
+    max-width: 100%;
   }
+
   a {
     @include button(180px,$blue,$white,$blue);
+
     margin-top: 20px;
   }
 }
@@ -116,6 +126,7 @@
   .features li {
     min-height: 232px;
     padding: 25px 19px 18px 27px;
+
     h3 {
       margin-top: 5px;
       line-height: 24px;
@@ -128,14 +139,17 @@
     padding-bottom: 54px;
     background-size: 251px;
     background-position: -8px 0;
+
     h2 {
       font-size: 32px;
       line-height: 45px;
       margin-bottom: 25px;
     }
+
     p {
       padding-left: 2px;
     }
+
     a {
       margin-left: 3px;
     }
@@ -146,19 +160,23 @@
   .features {
     background-position: calc(50% + 120px) 477px;
     padding: 0;
+
     ul {
       padding: 15px;
     }
+
     li {
       width: 100%;
       min-height: 232px;
       margin-bottom: 20px;
       padding: 23px 13px 23px 25px;
+
       h3 {
         font-size: 20px;
         line-height: 28px;
         margin: 9px 0;
       }
+
       p {
         margin-top: 9px;
       }
@@ -172,14 +190,17 @@
   .features__company {
     background: none;
     padding: 21px 13px 21px 13px;
+
     h2 {
       font-size: 28px;
       line-height: 40px;
       margin-bottom: 2px;
     }
+
     p {
       margin-top: 19px;
     }
+
     a {
       margin-top: 8px;
     }

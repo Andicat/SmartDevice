@@ -23,6 +23,7 @@
   margin-left: auto;
   display: flex;
   flex-direction: column;
+
   legend {
     font-family: "Roboto Condensed", "Arial", sans-serif;
     font-weight: normal;
@@ -32,6 +33,7 @@
     margin-bottom: 10px;
     margin-left: -5px;
   }
+
   span {
     font-family: "PT Mono", "Arial", monospace;
     font-weight: normal;
@@ -39,6 +41,7 @@
     line-height: 22px;
     margin-bottom: 50px;
   }
+
   input,
   textarea {
     min-width: 270px;
@@ -52,6 +55,7 @@
     color: $white;
     resize: none;
     margin-bottom: 40px;
+
     &::-webkit-input-placeholder {
       font-family: "PT Mono", "Arial", monospace;
       font-size: 16px;
@@ -59,11 +63,13 @@
       font-weight: normal;
       color: $white;
     }
+
     &::-moz-placeholder {
       font-size: 16px;
       color: $white;
       opacity: 1;
     }
+
     &:hover,
     &:focus,
     &:active {
@@ -73,15 +79,18 @@
       transition: 0.2s ease;
       padding-left: 16px;
     }
+
     &:focus::placeholder {
       color: transparent;
     }
   }
+
   button {
     @include button(270px,$white,$blue,$white);
     padding: 0;
     margin: 0;
   }
+
   label {
     width: 230px;
     font-family: "PT Mono", "Arial", monospace;
@@ -93,6 +102,7 @@
     margin-top: 9px;
     position: relative;
     cursor: pointer;
+
     &::before {
       content: "";
       position: absolute;
@@ -103,6 +113,7 @@
       left: 0;
       top: 0;
     }
+
     &:hover,
     &:focus,
     &:active {
@@ -117,6 +128,7 @@
   padding: 13px 20px 13px 16px;
   min-height: 154px;
   margin-bottom: 45px;
+
   &:hover,
   &:focus,
   &:active {
@@ -125,7 +137,7 @@
   }
 }
 
-.form  input[type="checkbox"]:checked + label::after {
+.form input[type="checkbox"]:checked + label::after {
   content: "";
   position: absolute;
   width: 6px;
@@ -149,25 +161,31 @@
   .form {
     max-width: 590px;
     margin: 0 auto;
+
     legend {
       font-size: 32px;
       line-height: 45px;
       margin-bottom: 15px;
     }
+
     span {
       margin-bottom: 55px;
     }
+
     input {
       min-width: 278px;
       margin-bottom: 41px;
     }
+
     textarea {
       min-height: 159px;
       margin-bottom: 48px;
     }
+
     button {
       min-width: 280px;
     }
+
     label {
       margin-right: 10px;
     }
@@ -187,6 +205,7 @@
 
   .form {
     padding-top: 14px;
+
     legend {
       max-width: 250px;
       font-size: 28px;
@@ -194,16 +213,20 @@
       margin-left: 0;
       margin-bottom: 10px;
     }
+
     span {
       margin-bottom: 25px;
     }
+
     input {
       margin-bottom: 32px;
     }
+
     textarea {
       min-height: 104px;
       margin-bottom: 33px;
     }
+
     label {
       margin-top: 31px;
     }
