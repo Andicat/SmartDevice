@@ -21,8 +21,14 @@
 .form {
   max-width: 570px;
   margin-left: auto;
-  display: flex;
-  flex-direction: column;
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
 
   legend {
     font-family: "Roboto Condensed", "Arial", sans-serif;
@@ -125,8 +131,9 @@
 }
 
 .form textarea {
+  min-width: 100%;
   padding: 13px 20px 13px 16px;
-  min-height: 154px;
+  height: 154px;
   margin-bottom: 45px;
 
   &:hover,
@@ -178,7 +185,7 @@
     }
 
     textarea {
-      min-height: 159px;
+      height: 159px;
       margin-bottom: 48px;
     }
 
@@ -223,7 +230,7 @@
     }
 
     textarea {
-      min-height: 104px;
+      height: 104px;
       margin-bottom: 33px;
     }
 
