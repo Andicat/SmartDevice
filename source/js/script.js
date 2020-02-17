@@ -119,7 +119,7 @@ function checkPhone(evt) {
   var inp = evt.target;
   var curLen = inp.value.length;
   if (!/\d/.test(evt.key)) {
-    if (evt.keyCode === 8) {
+    if (evt.keyCode === 8 || evt.keyCode === 9) {
       return;
     } else {
       evt.preventDefault();
