@@ -150,7 +150,7 @@ function checkPhone(evt) {
 }
 
 // плавный скроллинг
-for (i = 0; i < anchorList.length; i++) {
+/*for (i = 0; i < anchorList.length; i++) {
   anchor = anchorList[i];
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -161,7 +161,7 @@ for (i = 0; i < anchorList.length; i++) {
       block: 'start'
     });
   });
-}
+}*/
 
 // аккордеон
 for (i = 0; i < accList.length; i++) {
