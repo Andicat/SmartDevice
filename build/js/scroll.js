@@ -39,7 +39,6 @@ function polyfill() {
    * @returns {Boolean}
    */
   function isMicrosoftBrowser(userAgent) {
-    console.log('1');
     var userAgentPatterns = ['MSIE ', 'Trident/', 'Edge/'];
 
     return new RegExp(userAgentPatterns.join('|')).test(userAgent);
@@ -60,7 +59,6 @@ function polyfill() {
    * @returns {undefined}
    */
   function scrollElement(x, y) {
-    console.log('hfgh');
     this.scrollLeft = x;
     this.scrollTop = y;
   }
@@ -204,7 +202,6 @@ function polyfill() {
    * @returns {undefined}
    */
   function smoothScroll(el, x, y) {
-    console.log('hfgh');
     var scrollable;
     var startX;
     var startY;
@@ -380,7 +377,6 @@ function polyfill() {
 
   // Element.prototype.scrollIntoView
   Element.prototype.scrollIntoView = function() {
-    console.log('hfghggfg');
     // avoid smooth behavior if not required
     if (shouldBailOut(arguments[0]) === true) {
       original.scrollIntoView.call(

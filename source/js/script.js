@@ -149,20 +149,6 @@ function checkPhone(evt) {
   }
 }
 
-// плавный скроллинг
-for (i = 0; i < anchorList.length; i++) {
-  anchor = anchorList[i];
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    var link = e.target.nodeName === 'SPAN' ? e.target.parentNode : e.target;
-    var blockID = link.getAttribute('href').substr(1);
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  });
-}
-
 // аккордеон
 for (i = 0; i < accList.length; i++) {
   acc = accList[i];
@@ -172,5 +158,18 @@ for (i = 0; i < accList.length; i++) {
         accList[j].checked = accList[j] === e.target ? true : false;
       }
     }
+  });
+}
+
+// плавный скроллинг
+for (i = 0; i < anchorList.length; i++) {
+  anchor = anchorList[i];
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: document.body.clientHeight - window.innerHeight,
+      left: 0,
+      behavior: 'smooth'
+    });
   });
 }

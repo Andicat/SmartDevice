@@ -31,54 +31,43 @@ function polyfill() {
     w.performance && w.performance.now
       ? w.performance.now.bind(w.performance)
       : Date.now;
-
-  /**
-   * indicates if a the current browser is made by Microsoft
-   * @method isMicrosoftBrowser
-   * @param {String} userAgent
-   * @returns {Boolean}
-   */
+  // indicates if a the current browser is made by Microsoft
+  // @method isMicrosoftBrowser
+  // @param {String} userAgent
+  // @returns {Boolean}
   function isMicrosoftBrowser(userAgent) {
     var userAgentPatterns = ['MSIE ', 'Trident/', 'Edge/'];
 
     return new RegExp(userAgentPatterns.join('|')).test(userAgent);
   }
 
-  /*
-   * IE has rounding bug rounding down clientHeight and clientWidth and
-   * rounding up scrollHeight and scrollWidth causing false positives
-   * on hasScrollableSpace
-   */
+  // IE has rounding bug rounding down clientHeight and clientWidth and
+  // rounding up scrollHeight and scrollWidth causing false positives
+  // on hasScrollableSpace
   var ROUNDING_TOLERANCE = isMicrosoftBrowser(w.navigator.userAgent) ? 1 : 0;
 
-  /**
-   * changes scroll position inside an element
-   * @method scrollElement
-   * @param {Number} x
-   * @param {Number} y
-   * @returns {undefined}
-   */
+  // changes scroll position inside an element
+  // @method scrollElement
+  // @param {Number} x
+  // @param {Number} y
+  // @returns {undefined}
   function scrollElement(x, y) {
     this.scrollLeft = x;
     this.scrollTop = y;
   }
 
-  /**
-   * returns result of applying ease math function to a number
-   * @method ease
-   * @param {Number} k
-   * @returns {Number}
-   */
+  // returns result of applying ease math function to a number
+  // @method ease
+  // @param {Number} k
+  // @returns {Number}
   function ease(k) {
-    return 0.5 * (1 - Math.cos(Math.PI * k));
+    return 0.5// (1 - Math.cos(Math.PI// k));
   }
 
-  /**
-   * indicates if a smooth behavior should be applied
-   * @method shouldBailOut
-   * @param {Number|Object} firstArg
-   * @returns {Boolean}
-   */
+  // indicates if a smooth behavior should be applied
+  // @method shouldBailOut
+  // @param {Number|Object} firstArg
+  // @returns {Boolean}
   function shouldBailOut(firstArg) {
     if (
       firstArg === null ||
@@ -99,19 +88,17 @@ function polyfill() {
 
     // throw error when behavior is not supported
     throw new TypeError(
-      'behavior member of ScrollOptions ' +
+        'behavior member of ScrollOptions ' +
         firstArg.behavior +
         ' is not a valid value for enumeration ScrollBehavior.'
     );
   }
 
-  /**
-   * indicates if an element has scrollable space in the provided axis
-   * @method hasScrollableSpace
-   * @param {Node} el
-   * @param {String} axis
-   * @returns {Boolean}
-   */
+  // indicates if an element has scrollable space in the provided axis
+  // @method hasScrollableSpace
+  // @param {Node} el
+  // @param {String} axis
+  // @returns {Boolean}
   function hasScrollableSpace(el, axis) {
     if (axis === 'Y') {
       return el.clientHeight + ROUNDING_TOLERANCE < el.scrollHeight;
@@ -122,26 +109,22 @@ function polyfill() {
     }
   }
 
-  /**
-   * indicates if an element has a scrollable overflow property in the axis
-   * @method canOverflow
-   * @param {Node} el
-   * @param {String} axis
-   * @returns {Boolean}
-   */
+  // indicates if an element has a scrollable overflow property in the axis
+  // @method canOverflow
+  // @param {Node} el
+  // @param {String} axis
+  // @returns {Boolean}
   function canOverflow(el, axis) {
     var overflowValue = w.getComputedStyle(el, null)['overflow' + axis];
 
     return overflowValue === 'auto' || overflowValue === 'scroll';
   }
 
-  /**
-   * indicates if an element can be scrolled in either axis
-   * @method isScrollable
-   * @param {Node} el
-   * @param {String} axis
-   * @returns {Boolean}
-   */
+  // indicates if an element can be scrolled in either axis
+  // @method isScrollable
+  // @param {Node} el
+  // @param {String} axis
+  // @returns {Boolean}
   function isScrollable(el) {
     var isScrollableY = hasScrollableSpace(el, 'Y') && canOverflow(el, 'Y');
     var isScrollableX = hasScrollableSpace(el, 'X') && canOverflow(el, 'X');
@@ -149,12 +132,10 @@ function polyfill() {
     return isScrollableY || isScrollableX;
   }
 
-  /**
-   * finds scrollable parent of an element
-   * @method findScrollableParent
-   * @param {Node} el
-   * @returns {Node} el
-   */
+  // finds scrollable parent of an element
+  // @method findScrollableParent
+  // @param {Node} el
+  // @returns {Node} el
   function findScrollableParent(el) {
     while (el !== d.body && isScrollable(el) === false) {
       el = el.parentNode || el.host;
@@ -163,12 +144,10 @@ function polyfill() {
     return el;
   }
 
-  /**
-   * self invoked function that, given a context, steps through scrolling
-   * @method step
-   * @param {Object} context
-   * @returns {undefined}
-   */
+  // self invoked function that, given a context, steps through scrolling
+  // @method step
+  // @param {Object} context
+  // @returns {undefined}
   function step(context) {
     var time = now();
     var value;
@@ -182,8 +161,8 @@ function polyfill() {
     // apply easing to elapsed time
     value = ease(elapsed);
 
-    currentX = context.startX + (context.x - context.startX) * value;
-    currentY = context.startY + (context.y - context.startY) * value;
+    currentX = context.startX + (context.x - context.startX)// value;
+    currentY = context.startY + (context.y - context.startY)// value;
 
     context.method.call(context.scrollable, currentX, currentY);
 
@@ -193,14 +172,12 @@ function polyfill() {
     }
   }
 
-  /**
-   * scrolls window or element with a smooth behavior
-   * @method smoothScroll
-   * @param {Object|Node} el
-   * @param {Number} x
-   * @param {Number} y
-   * @returns {undefined}
-   */
+  // scrolls window or element with a smooth behavior
+  // @method smoothScroll
+  // @param {Object|Node} el
+  // @param {Number} x
+  // @param {Number} y
+  // @returns {undefined}
   function smoothScroll(el, x, y) {
     var scrollable;
     var startX;
@@ -358,11 +335,11 @@ function polyfill() {
       original.elementScroll.call(
         this,
         arguments[0].left !== undefined
-          ? ~~arguments[0].left + this.scrollLeft
-          : ~~arguments[0] + this.scrollLeft,
-        arguments[0].top !== undefined
-          ? ~~arguments[0].top + this.scrollTop
-          : ~~arguments[1] + this.scrollTop
+            ? ~~arguments[0].left + this.scrollLeft
+            : ~~arguments[0] + this.scrollLeft,
+          arguments[0].top !== undefined
+            ? ~~arguments[0].top + this.scrollTop
+            : ~~arguments[1] + this.scrollTop
       );
 
       return;
@@ -380,8 +357,8 @@ function polyfill() {
     // avoid smooth behavior if not required
     if (shouldBailOut(arguments[0]) === true) {
       original.scrollIntoView.call(
-        this,
-        arguments[0] === undefined ? true : arguments[0]
+          this,
+          arguments[0] === undefined ? true : arguments[0]
       );
 
       return;
@@ -395,10 +372,10 @@ function polyfill() {
     if (scrollableParent !== d.body) {
       // reveal element inside parent
       smoothScroll.call(
-        this,
-        scrollableParent,
-        scrollableParent.scrollLeft + clientRects.left - parentRects.left,
-        scrollableParent.scrollTop + clientRects.top - parentRects.top
+          this,
+          scrollableParent,
+          scrollableParent.scrollLeft + clientRects.left - parentRects.left,
+          scrollableParent.scrollTop + clientRects.top - parentRects.top
       );
 
       // reveal parent in viewport unless is fixed
@@ -422,7 +399,9 @@ function polyfill() {
 
 if (typeof exports === 'object' && typeof module !== 'undefined') {
   // commonjs
-  module.exports = { polyfill: polyfill };
+  module.exports = {
+    polyfill: polyfill
+  };
 } else {
   // global
   polyfill();
