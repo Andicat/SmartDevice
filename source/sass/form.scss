@@ -92,10 +92,16 @@
     }
   }
 
+  textarea,
+  input[type="text"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
   input[id="agr"] {
     right: 0%;
   }
-  
+
   button {
     @include button(270px,$white,$blue,$white);
     padding: 0;
