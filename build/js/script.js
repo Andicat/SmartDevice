@@ -35,6 +35,7 @@ if (messageLink) {
   messageLink.addEventListener('click', function (evt) {
     evt.preventDefault();
     overlay.classList.add('modal-show');
+    document.body.classList.add('stop-scrolling');
     messageForm.classList.add('modal-show');
     userName.focus();
   });
@@ -72,6 +73,7 @@ closeButtonLink.addEventListener('click', function (evt) {
   if (closeLink.parentNode.classList.contains('modal-show')) {
     closeLink.parentNode.classList.remove('modal-show');
     overlay.classList.remove('modal-show');
+    document.body.classList.remove('stop-scrolling');
   }
   if (closeLink.parentNode.classList.contains('modal-error')) {
     closeLink.parentNode.classList.remove('modal-error');
@@ -87,6 +89,7 @@ window.addEventListener('keydown', function (evt) {
         messageForm.classList.remove('modal-show');
         messageForm.classList.remove('modal-error');
         overlay.classList.remove('modal-show');
+        document.body.classList.remove('stop-scrolling');
       }
     }
   }
@@ -98,6 +101,7 @@ overlay.addEventListener('click', function () {
     messageForm.classList.remove('modal-show');
     messageForm.classList.remove('modal-error');
     overlay.classList.remove('modal-show');
+    document.body.classList.remove('stop-scrolling');
   }
 });
 

@@ -44,6 +44,10 @@ ul {
   cursor: pointer;
 }
 
+.stop-scrolling {
+  overflow: hidden;
+}
+
 .show-tablet,
 .show-mobile {
   display: none;
