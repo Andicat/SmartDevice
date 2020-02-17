@@ -167,9 +167,10 @@ for (i = 0; i < anchorList.length; i++) {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
     var link = e.target.nodeName === 'SPAN' ? e.target.parentNode : e.target;
-    window.scrollTo({ 
-      top: document.body.clientHeight - window.innerHeight, 
-      left: 0, 
+    var blockID = link.getAttribute('href').substr(1);
+    window.scrollTo({
+      top: document.getElementById(blockID).offsetTop,
+      left: 0,
       behavior: 'smooth'
     });
   });
